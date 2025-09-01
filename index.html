@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusat Pembelajaran Cikgu Shahrizan - Kelas Asas Year 8</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #f0f4f8;
+        }
+        h1, h2, h3, .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        .page { display: none; width: 100%; min-height: 100vh; }
+        .page.active { display: flex; }
+        .hub-card {
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+        }
+        .hub-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        /* --- Common Slide Styles --- */
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .presentation-view {
+             flex-grow: 1;
+             position: relative;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             overflow: hidden;
+        }
+        .controls {
+            background-color: rgba(243, 244, 246, 0.8); /* bg-gray-100 with opacity */
+            backdrop-filter: blur(4px);
+            border-top: 1px solid #e5e7eb;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        /* --- Kata Nama Slide Styles --- */
+        .kn-slide-wrapper { animation: kn-popIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); width: 100%; height: 100%; display: flex; flex-direction: column; }
+        .kn-slide-content { flex-grow: 1; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+        @keyframes kn-popIn { 0% { opacity: 0; transform: scale(0.9); } 100% { opacity: 1; transform: scale(1); } }
+        .kn-objective-banner { background-color: rgba(0, 0, 0, 0.6); color: white; padding: 0.5rem 1.5rem; border-radius: 0 0 1rem 0; position: absolute; top: 0; left: 0; font-size: 1.1rem; font-weight: 600; z-index: 10; display: flex; align-items: center; }
+        .kn-objective-banner svg { margin-right: 0.5rem; }
+        .kn-bg-bubbles { background-color: #ecfccb; background-image: radial-gradient(circle at 100% 100%, #d9f99d 0, #ecfccb 40%), radial-gradient(circle at 0% 0%, #bef264 0, #ecfccb 50%); }
+        .kn-bg-stripes { background-color: #fce7f3; background-image: repeating-linear-gradient( -45deg, #fbcfe8, #fbcfe8 10px, #fce7f3 10px, #fce7f3 20px ); }
+        .kn-bg-dots { background-color: #e0f2fe; background-image: radial-gradient(#bae6fd 1px, transparent 1px); background-size: 15px 15px; }
+        .kn-bg-waves { background-color: #fef9c3; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='80' height='40'%3E%3Cpath fill='%23fde047' fill-opacity='0.2' d='M0 40a20 20 0 0 1 20-20 20 20 0 0 1 20 20v-20A20 20 0 0 1 60 0a20 20 0 0 1 20 20v20H0z'%3E%3C/path%3E%3C/svg%3E"); }
+        .kn-choice-btn { transition: all 0.2s ease-in-out; }
+        .kn-choice-btn:hover:not(:disabled) { transform: translateY(-4px) scale(1.02); box-shadow: 0 8px 16px rgba(0,0,0,0.15); }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Halaman Indeks Kelas Asas -->
+    <div id="foundation-year8-page" class="page active flex-col items-center justify-center p-6">
+        <div class="text-center fade-in">
+            <div class="w-24 h-24 mx-auto bg-green-500 rounded-full flex items-center justify-center shadow-lg mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.25278C12 6.25278 10.8333 4 8 4C5.16667 4 3 6.16667 3 9C3 14 8 19 12 21C16 19 21 14 21 9C21 6.16667 18.8333 4 16 4C13.1667 4 12 6.25278 12 6.25278Z" />
+                </svg>
+            </div>
+            <h1 class="text-5xl font-extrabold text-gray-800 font-poppins">Pusat Pembelajaran Kelas Asas Year 8</h1>
+            <p class="text-gray-500 mt-3 text-lg bg-gray-200 inline-block px-3 py-1 rounded-full">(Foundation)</p>
+            <p class="text-gray-600 mt-6 text-xl font-medium">Dibawakan oleh: <span class="font-bold text-green-600">Cikgu Shahrizan</span></p>
+        </div>
+        
+        <div class="mt-10 w-full max-w-lg space-y-5">
+            <button data-target="introduction-page" class="hub-card fade-in w-full text-left p-5 bg-white rounded-xl shadow-md flex items-center space-x-4" style="animation-delay: 0.1s;">
+                <div class="flex-shrink-0 h-14 w-14 rounded-lg flex items-center justify-center bg-orange-100 text-orange-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <div>
+                    <span class="text-sm font-semibold text-orange-500">Topik 0</span>
+                    <p class="font-bold text-gray-800 text-xl font-poppins">Sesi Pengenalan: Jom Belajar!</p>
+                </div>
+            </button>
+            <button data-target="ukuran-bahan-page" class="hub-card fade-in w-full text-left p-5 bg-white rounded-xl shadow-md flex items-center space-x-4" style="animation-delay: 0.2s;">
+                <div class="flex-shrink-0 h-14 w-14 rounded-lg flex items-center justify-center bg-blue-100 text-blue-600">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5v4m0 0h4" /></svg>
+                </div>
+                <div>
+                    <span class="text-sm font-semibold text-blue-500">Topik 1</span>
+                    <p class="font-bold text-gray-800 text-xl font-poppins">Slaid: Ukuran dan Bahan</p>
+                </div>
+            </button>
+            <button data-target="kata-nama-page" class="hub-card fade-in w-full text-left p-5 bg-white rounded-xl shadow-md flex items-center space-x-4" style="animation-delay: 0.3s;">
+                <div class="flex-shrink-0 h-14 w-14 rounded-lg flex items-center justify-center bg-purple-100 text-purple-600">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10m16-5H4" /></svg>
+                </div>
+                <div>
+                    <span class="text-sm font-semibold text-purple-500">Topik 2</span>
+                    <p class="font-bold text-gray-800 text-xl font-poppins">Slaid: Kenali Kata Nama</p>
+                </div>
+            </button>
+            <button data-target="karangan-hari-keluarga-page" class="hub-card fade-in w-full text-left p-5 bg-white rounded-xl shadow-md flex items-center space-x-4" style="animation-delay: 0.4s;">
+                 <div class="flex-shrink-0 h-14 w-14 rounded-lg flex items-center justify-center bg-green-100 text-green-600">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                </div>
+                <div>
+                    <span class="text-sm font-semibold text-green-500">Topik 3</span>
+                    <p class="font-bold text-gray-800 text-xl font-poppins">Slaid: Menulis Ayat Mudah</p>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Container untuk alatan interaktif Kelas Asas -->
+    <div id="introduction-page" class="page"></div>
+    <div id="ukuran-bahan-page" class="page"></div>
+    <div id="kata-nama-page" class="page"></div>
+    <div id="karangan-hari-keluarga-page" class="page"></div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        
+        const pages = document.querySelectorAll('.page');
+        window.showPage = (pageId) => {
+            pages.forEach(page => page.classList.toggle('active', page.id === pageId));
+            if (window.initTools && window.initTools[pageId] && !document.getElementById(pageId).dataset.initialized) {
+                window.initTools[pageId]();
+                document.getElementById(pageId).dataset.initialized = 'true';
+            }
+        };
+
+        document.body.addEventListener('click', (e) => {
+            const target = e.target.closest('[data-target]');
+            if (target) {
+                e.preventDefault();
+                showPage(target.dataset.target);
+            }
+        });
+        
+        window.initTools = {};
+        
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { apiKey: "DEMO-KEY", authDomain: "DEMO-DOMAIN", projectId: "DEMO-PROJECT" };
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                const token = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+                if (token) signInWithCustomToken(auth, token).catch(err => signInAnonymously(auth));
+                else signInAnonymously(auth);
+            }
+        });
+
+        // Placeholder for other topics
+        window.initTools['ukuran-bahan-page'] = () => {
+             const container = document.getElementById('ukuran-bahan-page');
+             container.innerHTML = `<div class="w-full h-full flex flex-col items-center justify-center"><h1 class="text-4xl">Slaid Ukuran dan Bahan akan diletakkan di sini.</h1><button data-target="foundation-year8-page" class="mt-4 bg-gray-200 text-gray-800 font-bold py-3 px-8 rounded-lg hover:bg-gray-300 shadow-md">Kembali ke Indeks</button></div>`;
+        };
+        window.initTools['introduction-page'] = () => {
+             const container = document.getElementById('introduction-page');
+             container.innerHTML = `<div class="w-full h-full flex flex-col items-center justify-center"><h1 class="text-4xl">Slaid Pengenalan akan diletakkan di sini.</h1><button data-target="foundation-year8-page" class="mt-4 bg-gray-200 text-gray-800 font-bold py-3 px-8 rounded-lg hover:bg-gray-300 shadow-md">Kembali ke Indeks</button></div>`;
+        };
+        window.initTools['karangan-hari-keluarga-page'] = () => {
+             const container = document.getElementById('karangan-hari-keluarga-page');
+             container.innerHTML = `<div class="w-full h-full flex flex-col items-center justify-center"><h1 class="text-4xl">Slaid Menulis Ayat Mudah akan diletakkan di sini.</h1><button data-target="foundation-year8-page" class="mt-4 bg-gray-200 text-gray-800 font-bold py-3 px-8 rounded-lg hover:bg-gray-300 shadow-md">Kembali ke Indeks</button></div>`;
+        };
+
+        // --- ALATAN UNTUK TOPIK 2: KATA NAMA ---
+        window.initTools['kata-nama-page'] = () => {
+            const container = document.getElementById('kata-nama-page');
+            container.classList.add('p-0');
+            container.innerHTML = `
+                <div class="presentation-container bg-white overflow-hidden shadow-2xl flex flex-col">
+                    <div id="presentation-view-kn" class="presentation-view">
+                        <!-- Slides will be dynamically inserted here -->
+                    </div>
+                    <div class="controls">
+                        <button id="prev-btn-kn" class="px-5 py-2 bg-gray-300 text-gray-800 font-semibold rounded-lg shadow-md hover:bg-gray-400 disabled:opacity-50 disabled:cursor-not-allowed">Sebelum</button>
+                        <div id="slide-counter-kn" class="text-base font-bold text-gray-600"></div>
+                        <div class="flex items-center gap-4">
+                            <button data-target="foundation-year8-page" class="px-5 py-2 bg-gray-200 text-gray-800 font-semibold rounded-lg shadow-sm hover:bg-gray-300">Hub Utama</button>
+                            <button id="next-btn-kn" class="px-5 py-2 bg-purple-500 text-white font-semibold rounded-lg shadow-md hover:bg-purple-600 disabled:opacity-50 disabled:cursor-not-allowed">Seterusnya</button>
+                        </div>
+                    </div>
+                </div>`;
+            
+            const presentationView = container.querySelector('#presentation-view-kn');
+            const prevBtn = container.querySelector('#prev-btn-kn');
+            const nextBtn = container.querySelector('#next-btn-kn');
+            const slideCounter = container.querySelector('#slide-counter-kn');
+
+            const slides = [
+                { objective: "Memulakan perbincangan awal tentang objek sekeliling.", content: `<div class="w-full text-center"><h1 class="text-7xl font-extrabold text-gray-800 mb-4">Mari Belajar Kata Nama!</h1><p class="text-4xl text-purple-600 font-semibold">Perkataan untuk Manusia, Haiwan, Benda & Tempat</p><div class="mt-8 bg-yellow-100 p-4 rounded-lg max-w-3xl mx-auto ring-4 ring-yellow-200"><h3 class="text-3xl font-bold text-yellow-800">Aktiviti Permulaan 🧠</h3><p class="text-2xl text-yellow-700 mt-2">Lihat sekeliling anda. Senaraikan <strong>lima benda</strong> yang anda nampak di dalam kelas.</p></div></div>`},
+                { objective: "Menetapkan matlamat pembelajaran untuk keseluruhan sesi.", content: `<div class="w-full text-center"><h2 class="text-6xl font-bold text-gray-800 mb-8">Apa Kita Akan Belajar Hari Ini?</h2><div class="text-left max-w-4xl mx-auto text-3xl space-y-5"><div><span class="bg-green-200 text-green-800 font-bold px-3 py-1 rounded-full mr-3">1</span>Mengenal pasti <strong>dua jenis</strong> Kata Nama (Am dan Khas).</div><div><span class="bg-green-200 text-green-800 font-bold px-3 py-1 rounded-full mr-3">2</span>Memberi <strong>contoh</strong> yang betul bagi setiap jenis Kata Nama.</div><div><span class="bg-green-200 text-green-800 font-bold px-3 py-1 rounded-full mr-3">3</span>Membina <strong>ayat mudah</strong> menggunakan Kata Nama yang telah dipelajari.</div></div></div>`},
+                { objective: "Memahami definisi asas dan empat kategori utama Kata Nama.", content: `<div class="w-full text-center"><h2 class="text-6xl font-bold text-gray-800">Apa Itu Kata Nama? 🤔</h2><p class="mt-4 text-4xl text-gray-600 max-w-3xl mx-auto">Kata Nama ialah perkataan yang kita gunakan untuk menamakan...</p><div class="mt-6 grid grid-cols-2 gap-6 max-w-4xl mx-auto text-4xl"><div class="bg-blue-100 p-8 rounded-lg shadow-md">🧑 Manusia</div><div class="bg-green-100 p-8 rounded-lg shadow-md">🐘 Haiwan</div><div class="bg-red-100 p-8 rounded-lg shadow-md">🚗 Benda</div><div class="bg-purple-100 p-8 rounded-lg shadow-md">🏠 Tempat</div></div></div>`},
+                { objective: "Mengenal perbezaan awal antara Kata Nama Am dan Khas.", content: `<div class="w-full text-center"><h2 class="text-6xl font-bold text-gray-800">Ada Dua Jenis Kata Nama!</h2><div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"><div class="bg-gray-100 p-8 rounded-lg border-4 border-gray-200"><h3 class="text-5xl font-bold text-gray-700">Kata Nama Am</h3><p class="text-3xl mt-2">(Nama Umum)</p></div><div class="bg-gray-800 text-white p-8 rounded-lg"><h3 class="text-5xl font-bold">Kata Nama Khas</h3><p class="text-3xl mt-2">(Nama Khusus)</p></div></div></div>`},
+                { objective: "Mendalami konsep dan penulisan Kata Nama Am.", content: `<div class="w-full text-center"><h2 class="text-6xl font-bold text-gray-800">Fokus 1: Kata Nama Am (Umum)</h2><p class="mt-4 text-4xl text-gray-600 max-w-4xl mx-auto">Perkataan umum untuk sesuatu. Ia ditulis dengan <strong>huruf kecil</strong> (kecuali di awal ayat).</p><div class="mt-6 text-left bg-blue-50 p-6 rounded-lg max-w-3xl mx-auto text-3xl"><p class="font-bold">Contoh:</p><ul class="list-disc list-inside mt-2"><li>guru, polis, murid</li><li>sekolah, kedai, taman</li><li>kereta, buku, pensel</li></ul></div></div>`},
+                { objective: "Mengaplikasikan pengetahuan dengan mengelaskan Kata Nama Am.", content: `<div class="w-full text-center"><h2 class="text-6xl font-bold text-gray-800">Aktiviti Kelas: Jom Kelaskan!</h2><p class="mt-4 text-3xl text-gray-600">Bincang bersama rakan dan kelaskan perkataan di bawah.</p><div class="mt-4 p-4 bg-yellow-200 rounded-lg text-3xl font-bold">kerusi, harimau, peguam, hospital</div><div class="mt-4 grid grid-cols-2 gap-4 max-w-5xl mx-auto text-2xl"><div class="bg-blue-100 p-4 rounded-lg"><strong>Manusia:</strong> ___________</div><div class="bg-purple-100 p-4 rounded-lg"><strong>Tempat:</strong> ___________</div><div class="bg-red-100 p-4 rounded-lg"><strong>Benda:</strong> ___________</div><div class="bg-green-100 p-4 rounded-lg"><strong>Haiwan:</strong> ___________</div></div></div>`},
+                { objective: "Mendalami konsep dan penulisan Kata Nama Khas.", content: `<div class="w-full text-center"><h2 class="text-6xl font-bold text-gray-800">Fokus 2: Kata Nama Khas (Khusus)</h2><p class="mt-4 text-4xl text-gray-600 max-w-4xl mx-auto">Nama khusus untuk sesuatu. Mesti ditulis dengan <strong>huruf besar</strong> di pangkal perkataan.</p><div class="mt-6 text-left bg-pink-50 p-6 rounded-lg max-w-3xl mx-auto text-3xl"><p class="font-bold">Contoh Perbandingan:</p><ul class="list-disc list-inside mt-2"><li>Kata Nama Am: <u>g</u>uru ➡️ Kata Nama Khas: <u>C</u>ikgu <u>A</u>li</li><li>Kata Nama Am: <u>k</u>ereta ➡️ Kata Nama Khas: <u>P</u>roton <u>X</u>50</li></ul></div></div>`},
+                { objective: "Memberi contoh-contoh Kata Nama Khas yang relevan.", content: `<div class="w-full text-center"><h2 class="text-5xl font-bold text-gray-800 mb-6">Contoh-contoh Kata Nama Khas</h2><div class="grid grid-cols-2 gap-6 max-w-6xl mx-auto text-3xl"><div class="bg-gray-100 p-6 rounded-lg"><strong>Manusia:</strong> Doktor Hafiz, Puan Sarah</div><div class="bg-gray-100 p-6 rounded-lg"><strong>Haiwan:</strong> Si Tompok, Sang Kancil</div><div class="bg-gray-100 p-6 rounded-lg"><strong>Benda:</strong> Kasut Adidas, Telefon Samsung</div><div class="bg-gray-100 p-6 rounded-lg"><strong>Tempat:</strong> Kuala Lumpur, Sekolah Taman Daya</div></div></div>`},
+                { objective: "Menguji pemahaman membezakan Kata Nama Am dan Khas secara interaktif.", content: `<div class="w-full text-center"><h2 class="text-6xl font-bold text-gray-800 mb-6">Aktiviti Interaktif: Am atau Khas?</h2><p class="text-3xl text-gray-600">Tentukan sama ada perkataan ini Am atau Khas.</p><div class="mt-8 space-y-5 max-w-4xl mx-auto text-3xl text-left" id="quiz-container-kn"></div></div>`},
+                { objective: "Melihat aplikasi Kata Nama Am dan Khas dalam struktur ayat.", content: `<div class="w-full text-center"><h2 class="text-6xl font-bold text-gray-800">Contoh Dalam Ayat ✍️</h2><div class="mt-6 text-left bg-gray-100 p-8 rounded-lg max-w-4xl mx-auto text-3xl space-y-4"><div><strong class="text-blue-600">Am:</strong> <u>guru</u> itu sedang mengajar.</div><div><strong class="text-green-600">Khas:</strong> <u>Cikgu Fatimah</u> sedang mengajar.</div><hr><div><strong class="text-blue-600">Am:</strong> Saya membeli <u>kasut</u> baharu.</div><div><strong class="text-green-600">Khas:</strong> Saya membeli <u>kasut Nike</u> baharu.</div></div></div>`},
+                { objective: "Mengukuhkan pemahaman melalui aktiviti memilih jawapan yang betul.", content: `<div class="w-full"><h2 class="text-6xl font-bold text-gray-800 text-center">Aktiviti Interaktif: Isi Tempat Kosong</h2><p class="mt-4 text-3xl text-gray-600 text-center">Pilih jawapan yang paling sesuai untuk melengkapkan ayat.</p><div class="mt-6 text-left bg-yellow-50 p-6 rounded-lg max-w-4xl mx-auto text-3xl space-y-6" id="fill-blank-container-kn"></div></div>`},
+                { objective: "Mengenal pasti kedua-dua jenis Kata Nama dalam konteks petikan.", content: `<div class="w-full"><h2 class="text-6xl font-bold text-gray-800 text-center mb-4">Aktiviti Bacaan: Cari Kata Nama! 🧐</h2><div class="text-left bg-gray-100 p-6 rounded-lg max-w-5xl mx-auto text-2xl leading-relaxed"><p class="font-bold mb-2">Baca petikan di bawah dan senaraikan Kata Nama Am & Khas yang anda temui.</p><p class="mt-4">Pada cuti sekolah yang lalu, <strong>Kamal</strong> dan <strong>keluarganya</strong> telah melawat <strong>Zoo Negara</strong> di <strong>Kuala Lumpur</strong>. <strong>Kamal</strong> teruja melihat pelbagai jenis <strong>haiwan</strong> seperti <strong>gajah</strong> dan seekor <strong>harimau Malaya</strong>. <strong>Kakaknya</strong>, <strong>Aina</strong>, lebih suka melihat <strong>monyet</strong>. Sebelum pulang, <strong>ayah</strong> mereka, <strong>Encik Badrul</strong>, telah membelikan <strong>aiskrim</strong> di sebuah <strong>kedai</strong>.</p></div></div>`},
+                { objective: "Menggalakkan perbincangan dan penjanaan idea secara berpasangan.", content: `<div class="w-full text-center"><h2 class="text-6xl font-bold text-gray-800 mb-6">Aktiviti Berpasangan: Fikir-Pasang-Kongsi</h2><div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-xl"><p class="text-3xl text-gray-700">Dengan pasangan anda, senaraikan:</p><ul class="mt-6 text-left text-3xl space-y-4"><li class="flex"><strong class="text-blue-600 w-48">3 Kata Nama Am</strong> untuk benda di dalam beg sekolah.</li><li class="flex"><strong class="text-green-600 w-48">3 Kata Nama Khas</strong> untuk jenama kereta.</li></ul></div></div>`},
+                { objective: "Menerapkan pengetahuan dalam aktiviti permainan yang menyeronokkan.", content: `<div class="w-full text-center"><h2 class="text-6xl font-bold text-gray-800">Permainan Pantas: Siapa Cepat Dia Dapat!</h2><p class="mt-4 text-3xl text-gray-600">Cikgu akan sebut satu kategori (cth: "Minuman").</p><p class="mt-2 text-3xl text-gray-600">Setiap kumpulan perlu beri satu contoh Kata Nama Khas (cth: "Milo").</p><div class="mt-8 text-7xl">🏃💨💨</div></div>`},
+                { objective: "Merumuskan pembelajaran dan memberi tugasan pengukuhan.", content: `<div class="w-full text-center"><h2 class="text-7xl font-bold text-gray-800">Hebat Semua! ✅</h2><p class="mt-6 text-4xl text-gray-600">Hari ini, kita telah belajar:</p><ul class="mt-4 text-3xl list-disc list-inside max-w-lg mx-auto"><li>Maksud Kata Nama.</li><li>Beza Kata Nama Am & Khas.</li><li>Cara menggunakannya dalam ayat.</li></ul><div class="mt-8 bg-blue-100 p-6 rounded-lg text-3xl font-semibold ring-4 ring-blue-200">Tugasan Rumah: Tulis 5 ayat lengkap menggunakan Kata Nama Khas.</div></div>`}
+            ];
+
+            let currentSlide = 0;
+            const quizData = [ { word: 'kereta', type: 'Am' }, { word: 'Malaysia', type: 'Khas' }, { word: 'guru', type: 'Am' }, { word: 'Adidas', type: 'Khas' }, { word: 'sungai', type: 'Am' } ];
+            const fillBlankData = [ { sentence: 'Ayah memandu ( kereta / Proton ) ke pejabat.', correct: 'Proton' }, { sentence: '( Kucing / Si Comel ) itu sangat manja.', correct: 'Si Comel' }, { sentence: 'Saya belajar di ( sekolah / SMK Taman Universiti ).', correct: 'sekolah' } ];
+
+            function createQuiz() {
+                const quizContainer = container.querySelector('#quiz-container-kn');
+                if (!quizContainer) return;
+                quizContainer.innerHTML = quizData.map((item, index) => `<div class="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm"><span class="font-bold text-4xl">${item.word}</span><div class="flex gap-4"><button class="kn-choice-btn px-6 py-3 rounded-lg text-2xl bg-gray-200" data-quiz-index="${index}" data-answer="Am">Am</button><button class="kn-choice-btn px-6 py-3 rounded-lg text-2xl bg-gray-200" data-quiz-index="${index}" data-answer="Khas">Khas</button></div></div>`).join('');
+                quizContainer.addEventListener('click', e => {
+                    if (e.target.matches('.kn-choice-btn')) {
+                        const btn = e.target;
+                        const index = btn.dataset.quizIndex;
+                        const answer = btn.dataset.answer;
+                        const isCorrect = answer === quizData[index].type;
+                        const buttons = quizContainer.querySelectorAll(`[data-quiz-index="${index}"]`);
+                        buttons.forEach(b => { b.disabled = true; b.classList.remove('bg-gray-200'); });
+                        if (isCorrect) { btn.classList.add('bg-green-500', 'text-white'); } 
+                        else { btn.classList.add('bg-red-500', 'text-white'); quizContainer.querySelector(`[data-quiz-index="${index}"][data-answer="${quizData[index].type}"]`).classList.add('bg-green-500', 'text-white'); }
+                    }
+                });
+            }
+
+            function createFillBlanks() {
+                const fillContainer = container.querySelector('#fill-blank-container-kn');
+                if (!fillContainer) return;
+                fillContainer.innerHTML = fillBlankData.map((item, index) => {
+                    const options = item.sentence.match(/\((.*?)\)/)[1].split(' / ');
+                    const sentenceStart = item.sentence.split('(')[0];
+                    return `<div class="bg-white p-4 rounded-lg shadow-sm"><p class="mb-3">${index + 1}. ${sentenceStart} <span id="blank-kn-${index}" class="font-bold text-purple-700">_________</span>.</p><div class="flex gap-4" data-fill-index="${index}"><button class="kn-choice-btn px-5 py-2 rounded-lg bg-gray-200">${options[0]}</button><button class="kn-choice-btn px-5 py-2 rounded-lg bg-gray-200">${options[1]}</button></div></div>`;
+                }).join('');
+                fillContainer.addEventListener('click', e => {
+                    if (e.target.matches('.kn-choice-btn')) {
+                        const btn = e.target;
+                        const parent = btn.parentElement;
+                        const index = parent.dataset.fillIndex;
+                        const answer = btn.textContent;
+                        container.querySelector(`#blank-kn-${index}`).textContent = answer;
+                        parent.querySelectorAll('.kn-choice-btn').forEach(b => {
+                           b.disabled = true;
+                           b.classList.remove('bg-gray-200');
+                           if (b.textContent === fillBlankData[index].correct) { b.classList.add('bg-green-500', 'text-white'); } 
+                           else { b.classList.add('bg-red-500', 'text-white', 'opacity-60'); }
+                        });
+                    }
+                });
+            }
+            
+            function showSlide(index) {
+                const slide = slides[index];
+                const backgroundClasses = ['kn-bg-bubbles', 'kn-bg-stripes', 'kn-bg-dots', 'kn-bg-waves'];
+                presentationView.className = 'presentation-view';
+                presentationView.classList.add(backgroundClasses[index % 4]);
+                presentationView.innerHTML = `<div class="kn-objective-banner"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" /></svg><span>${slide.objective}</span></div><div class="kn-slide-wrapper"><div class="kn-slide-content">${slide.content}</div></div>`;
+                if (slide.content.includes('id="quiz-container-kn"')) { createQuiz(); }
+                if (slide.content.includes('id="fill-blank-container-kn"')) { createFillBlanks(); }
+                slideCounter.textContent = `Slaid ${index + 1} / ${slides.length}`;
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === slides.length - 1;
+            }
+
+            function toggleFullScreen() {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen().catch(err => alert(`Error: ${err.message}`));
+                } else {
+                    if (document.exitFullscreen) document.exitFullscreen();
+                }
+            }
+
+            prevBtn.addEventListener('click', () => { if (currentSlide > 0) { currentSlide--; showSlide(currentSlide); } });
+            nextBtn.addEventListener('click', () => { if (currentSlide < slides.length - 1) { currentSlide++; showSlide(currentSlide); } });
+            
+            document.addEventListener('keydown', (event) => {
+                if (container.classList.contains('active')) {
+                    if (event.key === 'ArrowRight' && !nextBtn.disabled) nextBtn.click();
+                    else if (event.key === 'ArrowLeft' && !prevBtn.disabled) prevBtn.click();
+                    else if (event.key === 'f' || event.key === 'F') { toggleFullScreen(); }
+                }
+            });
+
+            showSlide(currentSlide);
+        };
+        
+    </script>
+</body>
+</html>
+
